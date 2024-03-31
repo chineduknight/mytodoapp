@@ -1,12 +1,12 @@
-# Project Title
+# Knight Todo App
 
-The name of the Project
+Let the computer help you with schedules
 
-## Demo link:
+## Demo Link
 
-Access my site at [google.com](https://google.com)
+Access my site at [Knight Todo App](https://knighttodo.netlify.app/).
 
-## Table of Content:
+## Table of Contents
 
 - [About The App](#about-the-app)
 - [Screenshots](#screenshots)
@@ -19,39 +19,49 @@ Access my site at [google.com](https://google.com)
 
 ## About The App
 
-[Name of project] is an app that ...
+A basic todo app that solves problems, feel the magic
 
 ## Screenshots
 
-`![Writing](https://unsplash.com/photos/VBPzRgd7gfc)`
-
-Picture by [Kelly Sikkema](https://unsplash.com/@kellysikkema)
+- couldn't add screen shots due to time constraints
 
 ## Technologies
 
-I used `html`, `css`, ...
+The application is built with:
+
+- React
+- Chakra UI
+- HTML
+- CSS
+- JavaScript
 
 ## Setup
 
-- download or clone the repository
-- run `npm install`
-- ...
+To run this project locally:
+
+1. Clone the repository: `git clonehttps://github.com/chineduknight/mytodoapp.git`
+2. Copy the `.env.sample` file and rename it to `.env`.
+3. Open the `.env` file and update the placeholders with your actual data.
+4. Install dependencies: `yarn install` or `npm install`.
+5. Start the application: `yarn start` or `npm start`.
+6. Access it at `http://localhost:3000`.
 
 ## Approach
 
-I adopted the `BEM` naming style for my css class names and ...
+The development of Knight Todo App followed principles of clean code for better maintainability and readability. Components are designed to be as abstract as possible, enhancing code readability and scalability. Key features include:
+
+- Lazy loading for efficient component rendering.
+- Code formatting consistency with Prettier and ESLint.
+- Pre-commit checks with Husky to ensure code quality.
 
 ## Status
 
-[name of project] is still in progress. `Version 2` will be out soon.
+This is the first version of the Knight Todo App. Future updates will include more features and enhancements to enrich user experience and functionality. Feedback and contributions are welcome!
 
 ## Credits
 
-List of contriubutors:
-
-- [Chinedu Knight](https://chineduknight.netlify.app/)
-- [Beginners guide to BEM](link-goes-here.com)
+Developed by [Chinedu Knight](https://chineduknight.com/).
 
 ## License
 
-MIT license @ [author](author.com)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

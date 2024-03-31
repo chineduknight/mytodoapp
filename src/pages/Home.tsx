@@ -79,6 +79,13 @@ const Home = () => {
     setEditIndex(false);
     setCurrentTodo({ id: "", text: "", completed: false }); // Reset input after adding
   };
+  // Function to delete a todo by its id, only works when there is a todo
+  const handleDeleteTodo = () => {
+    const filteredTodos = todos.filter((todo) => todo.id !== currentTodo.id);
+    setTodos(filteredTodos);
+    setCurrentTodo({ id: "", text: "", completed: false }); // Reset input after adding
+    setEditIndex(false);
+  };
   return (
     <Flex>
       <Box
@@ -90,55 +97,8 @@ const Home = () => {
         zIndex="3"
         h="100vh"
       >
-        <Flex bg="#3556AB" p="1rem 2.5rem 1rem 1rem" h="116px" width="414px">
-          <Avatar w="50px" h="50px" mr="2rem" src="./face.png" />
-          <Box>
-            <Text color="#fff" fontWeight={500}>
-              Hello, John
-            </Text>
-            <Heading
-              fontSize="25px"
-              fontWeight={100}
-              fontStyle="italic"
-              color="#fff"
-              w="221px"
-            >
-              What are your plans for today?
-            </Heading>
-          </Box>
-        </Flex>
-        <Flex
-          h="116px"
-          alignItems="center"
-          bg="#CDE53D"
-          border="2px solid #9EB031"
-          position="relative"
-          boxShadow="0px 4px 4px rgba(0, 0, 0, 0.1)"
-        >
-          <Image src="./cup.png" alt="cup" ml="1rem" mr="1rem" />
-          <Text
-            color="#071D55"
-            fontSize="18px"
-            fontWeight={700}
-            lineHeight="19.05px"
-            textShadow="0 1px 0 #FFFFFF"
-          >
-            Go Pro Upgrade Now
-          </Text>
-          <Flex
-            position="absolute"
-            top="0"
-            w="66.11px"
-            h="71px"
-            bg="#071D55"
-            color="#F2C94C"
-            justifyContent="center"
-            alignItems="center"
-            right="30px"
-          >
-            $1
-          </Flex>
-        </Flex>
+        <Header />
+        <GoPro />
         <Box px="1rem" height="600px" overflowY="scroll">
           {todos.map((todo) => (
             <TodoCard
@@ -201,6 +161,7 @@ const Home = () => {
             h="61px"
             mr="1rem"
             fontSize="18px"
+            onClick={handleDeleteTodo}
           >
             Delete
           </Button>
@@ -259,6 +220,65 @@ const TodoCard = ({ todo, handleEdit, handleToggle }) => {
         >
           Edit
         </Button>
+      </Flex>
+    </Flex>
+  );
+};
+
+const Header = () => {
+  return (
+    <Flex bg="#3556AB" p="1rem 2.5rem 1rem 1rem" h="116px" width="414px">
+      <Avatar w="50px" h="50px" mr="2rem" src="./face.png" />
+      <Box>
+        <Text color="#fff" fontWeight={500}>
+          Hello, John
+        </Text>
+        <Heading
+          fontSize="25px"
+          fontWeight={100}
+          fontStyle="italic"
+          color="#fff"
+          w="221px"
+        >
+          What are your plans for today?
+        </Heading>
+      </Box>
+    </Flex>
+  );
+};
+
+const GoPro = () => {
+  return (
+    <Flex
+      h="116px"
+      alignItems="center"
+      bg="#CDE53D"
+      border="2px solid #9EB031"
+      position="relative"
+      boxShadow="0px 4px 4px rgba(0, 0, 0, 0.1)"
+    >
+      <Image src="./cup.png" alt="cup" ml="1rem" mr="1rem" />
+      <Text
+        color="#071D55"
+        fontSize="18px"
+        fontWeight={700}
+        lineHeight="19.05px"
+        textShadow="0 1px 0 #FFFFFF"
+      >
+        Go Pro Upgrade Now
+      </Text>
+      <Flex
+        position="absolute"
+        top="0"
+        w="66.11px"
+        h="71px"
+        bg="#071D55"
+        color="#F2C94C"
+        justifyContent="center"
+        alignItems="center"
+        right="30px"
+      >
+        $1
       </Flex>
     </Flex>
   );
